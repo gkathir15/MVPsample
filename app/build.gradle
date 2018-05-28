@@ -29,6 +29,7 @@ android {
             applicationIdSuffix ".flavorA"
             versionNameSuffix "-flavorA"
             dimension "tier"
+            buildConfigField("String","weburl","\"googlecom\"")
             minSdkVersion(23)
 
 
@@ -38,12 +39,14 @@ android {
             applicationIdSuffix ".flavoB"
             versionNameSuffix "-flavorB"
             dimension "tier"
+            buildConfigField("String","weburl","\"spacex.com\"")
             minSdkVersion(19)
         }
 
         flavorC {
             applicationIdSuffix ".flavorC"
             versionNameSuffix "-flavorC"
+            buildConfigField("String","weburl","\"tesla.com\"")
             dimension "tier"
             minSdkVersion(27)
         }
@@ -61,11 +64,6 @@ android {
             reset()
             exclude "xxxhdpi", "xxhdpi"
         }
-        abi {
-            enable true
-            reset()
-            include "x86", "x86_64"
-        }
     }
 
 
@@ -78,4 +76,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "com.android.support:appcompat-v7:27.1.1"
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.google.android.gms:play-services-location:15.0.1'
 }
